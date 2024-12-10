@@ -1,0 +1,108 @@
+
+javascript modules :used to transfer data from one js to another
+- use to import / export statements
+    -import statements : used to use exported data from another js file
+    - export statements : used to share t=data from one js file to another can be used in diffrent ways,
+        - using normal export keyword : used to export multiple data from a single js file 
+        - using export defult keyword: this keyword must be at the end of the data from another js file.
+--------------------------------------------------------------------------------------------------------------------------------------------
+                                                REACT : Advanced Frontend Application Library
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        1.Basic react:
+            -React app is a collection of different libraries
+            - React app is consist of different components , which is used to display contents on browser. All components are arranged in a tree structure. Tree structure has a single parent/root mother which is by defualt known as "APP component". components are reusable
+        
+            - Pure java script function to build components, It returns how to display contents in browser. These functions are capable of doing single task with the help of arguments. function with no side effects. 
+            - Declarative approach
+            - virtual DOM : Light-weight memmory representation od real DOM 
+            - Rabel Library : used to display contents into browser
+            - JSX (JavaScript XML): JS extension for writing HTML code i javascript, used to display content in browser
+            - JSK elements : ex: const heading = <h1> Heading </h1>
+            - Rules for using JSX
+            - Every JSX elements must be inside a single tag. Parent tag can be any container tag (div,section, article etc...) or react fragments(<> </>)
+            - In JSX we have to use "camel case" to write JSX components 
+            - Every JSX code must have a closing tag. if a tag has content then:'
+            <startingTag> content </endingTag>. if a tag has no content: <startingTag></endingTag> or we can use self closing tags(startingTag/>)
+            - Instead of attribute "class" use "className" in JSX
+            - Instead of attribute "for" use htmlFor in JSX
+            - In JSX, we can directly pass JS code inside acurly braces, (eg: (js code))
+        2.REACT App Creation
+            - 2 ways to create REACT App   
+                - CRA(using create-react-app-command)
+                -Vite : tool for building web applications
+                    - installing vite globally : npm i -g create-vite
+                    - react app creation using vite : npm create vite@latest reactAppname
+        3.Files and folder structure of react app using vite
+            - package.json file : npm configuration file for the project
+            - package-lock.json file: used to hold version of dependent package of the project.
+            - eslint.config.js -js configuration files
+            - node_modules folder : used to locally store dependent packages of project .
+              wecan generate node_modules folder with the help of command npm install /
+            - Public folder : used to hold data that can be accessed by any part of the project .
+            - index.html file : entry point of react applications
+            - src folder : logic of react application is defined here
+                - main.jsx file :used to render (displaying in browser ) react app in html element with id as "root"
+                - createRoot():create  a root to diplay react component insider a browser DOM node 
+                    - css file : used to define style for all components in react app- App.jsx file: used to create react root component
+                    - asset folder : used to hold media files used in react project
+        4.components :used to display content in browser, to  rate component create a jsx/js file with filename starting capital letters
+            - create component in 2 ways,
+                - Function based components : use js pure function to build components,Function name must be similar as its filename.It must return jsx code
+                - Life cycle methods of react component
+                    - Mounting phase : putting jsx into DOM
+                        - constructor()
+                        - getDerivedStateFromProps()::
+                        - render()
+                        - componentDidMount()
+                    - updating phase :when component get updated
+                        - getDerivedStateFromProps()
+                        - getSnapShotBeforeUpdate()
+                        - should ComponentUpadate() return boolean value
+                        - render()
+                        - componentDidUpdate()
+                    - Unmounting Phase: Romoving component from DOM
+
+             
+            class based ComponentUpadate                                                                 Function based component
+            ---------------------------------                                                      --------------------------------------
+
+            1.Using Classs to create .                                                             1. Using Js pure functions are return jsx
+            render method must return jsx
+            2.statefull component                                                                  2.stateless component
+            3.Hooks are not used                                                                   3.Hooks ae used
+            4.Consstucto used to initialize statefull                                              4.no need of constructor
+            5.life cycle methods are available                                                       5.life cycle methods are not available
+
+
+
+
+
+
+        5.Data sharing between react components
+            - data can be transfered from parent to child : use "props" object
+        6.props :Is a property of a component.Its an object used to transfer data from parent to child , parent data can be shared via child tag attribute.to access parent data in child use "props" as an argument in child component function.
+        7.Conditional rendering: based on condition rendering jsx elements in browser using if , if else, ternary operator,truthy opertor
+            //rfce normal
+            //rafce arrow
+        8.List in React :use map array method .set a key attribute to duplicating jsx elementin a List
+        9.CSS styling in React:
+            - inline css:use style attribute apply style to jsx element,style must be as js object
+                - syntax style-{{css property}}
+            - External css : Define css style in an external css file .Link CSS file to component file using import statements.we cannot css file in to a variable component fiel 
+                - import "css file path"
+            - using css module fiels : file with extension .module.css is known as css 'module file' in this we have to define stule in class. to ude modeule css  file we have to import it to the component file.
+            - import variable name from 'modulecss file path' ,to applystyle in component, use variable name.className
+        10.Event handling in react:syntax :event={function call}
+            - binding function without arguments: syntax event={functionName}
+            - binding function with arguments : syntax event={()={}}
+            
+        12.HOOKs inreact :predefined methods in react..used to provide react component features to function based component .To use a hooks in a functional component, it has 
+
+                    - useEffect(callbackfn,dependancy):used to apply side effects to a functional component.wecan pass side effect as it first argument as call back function,we can also pass an optional dependancy argumn=ent to decide when to apply side effects 
+        
+        13.Fom handling in React:There are two diffrent ways to manage data inside the form by component
+            - controlled components :are the components to store form data inside its own state
+            - uncontrolled components :who access form data using its DOM elememts reference
